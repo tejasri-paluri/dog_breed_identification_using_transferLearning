@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h2 class="mb-4">Prediction Result</h2>
+  {% if image_url %}
+  <img src="{{ image_url }}" class="img-fluid rounded mb-3" alt="Uploaded dog image" style="max-height:400px;">
+  {% endif %}
+  <div class="alert alert-info fs-4">Breed: <strong>{{ breed_name.replace('_',' ').title() }}</strong></div>
+  <a class="btn btn-primary" href="{{ url_for('predict') }}">Try Another Image</a>
+</div>
+{% endblock %}
